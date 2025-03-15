@@ -1,0 +1,38 @@
+dows:
+  databases:
+    - name: db_tree
+      host: localhost
+      port: 3306
+      user: root
+      password: root
+      tables:
+        - name: tb1
+          comment: tb1
+          columns:
+            - name: id
+              type: bigint
+              primaryKey: true
+              autoIncrement: true
+              comment: 主键
+
+            - name: name
+              type: varchar
+              comment: 名称
+              selected: true
+
+            - name: age
+              type: int
+              comment: 年龄
+              selected: true
+
+
+            - name: identifier
+              type: varchar
+              comment: 身份证
+              selected: false
+
+
+            - name: address
+              type: varchar
+              comment: 地址
+              selected: false

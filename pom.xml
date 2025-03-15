@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dows-parent</artifactId>
+        <groupId>org.dows.framework</groupId>
+        <version>20240120-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>dows-log</artifactId>
+    <groupId>org.dows.cloud</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <flink.version>1.19.0</flink.version>
+        <rbac.version>1.0.0-SNAPSHOT</rbac.version>
+        <app.version>1.0.0-SNAPSHOT</app.version>
+    </properties>
+
+    <modules>
+        <module>log-api</module>
+        <module>log-app</module>
+        <module>log-biz</module>
+        <module>log-boot</module>
+        <module>log-config</module>
+        <module>log-feign</module>
+        <module>log-handler</module>
+        <module>log-pojo</module>
+        <module>log-repository</module>
+        <module>log-rest</module>
+        <module>log-demo</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <artifactId>log-api</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>log-app</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>log-biz</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>log-boot</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>log-config</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>log-feign</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>log-handler</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>log-pojo</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>log-repository</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>log-rest</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+            <!--<dependency>
+                <groupId>org.dows.cloud</groupId>
+                <artifactId>aac-api</artifactId>
+                <version>${aac.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.dows.cloud</groupId>
+                <artifactId>aac-boot</artifactId>
+                <version>${aac.version}</version>
+            </dependency>-->
+
+            <dependency>
+                <groupId>org.dows.cloud</groupId>
+                <artifactId>app-api</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.dows.cloud</groupId>
+                <artifactId>app-boot</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>log-demo</artifactId>
+                <groupId>org.dows.cloud</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dows.cloud</groupId>
+                <artifactId>rbac-api</artifactId>
+                <version>${rbac.version}</version>
+            </dependency>
+
+            <!--<dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-java</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            &lt;!&ndash;flink connector 基础包&ndash;&gt;
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-base</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-core</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+
+            &lt;!&ndash;开启webui支持，默认是8081，默认没有开启&ndash;&gt;
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-runtime-web</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            &lt;!&ndash;Flink Table API和SQL API使得在Flink中进行数据处理变得更加简单和高效
+            通过使用Table API和SQL API，可以像使用传统的关系型数据库一样，通过编写SQL语句或者使用类似于
+            Java的API进行数据处理和分析&ndash;&gt;
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-runtime</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            &lt;!&ndash;CDC mysql 源&ndash;&gt;
+            <dependency>
+                <groupId>com.ververica</groupId>
+                <artifactId>flink-sql-connector-mysql-cdc</artifactId>
+                <version>3.0.1</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.ververica</groupId>
+                <artifactId>flink-connector-sqlserver-cdc</artifactId>
+                <version>3.0.1</version>
+            </dependency>-->
+
+            <dependency>
+                <groupId>com.jayway.jsonpath</groupId>
+                <artifactId>json-path</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+
+    </dependencies>
+
+
+    <distributionManagement>
+        <snapshotRepository>
+            <!--<id>rdc-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2290151-snapshot-aLhHBl/</url>-->
+            <id>shdy-snapshots</id>
+            <url>http://192.168.111.103:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+
+    </distributionManagement>
+    <pluginRepositories>
+
+
+    </pluginRepositories>
+</project>

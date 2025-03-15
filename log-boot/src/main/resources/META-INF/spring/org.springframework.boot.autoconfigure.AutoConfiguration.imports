@@ -1,0 +1,4 @@
+#org.dows.log.LogAutoConfig
+#org.dows.log.admin.LogAdminAutoConfig
+#org.dows.log.tenant.LogTenantAutoConfig
+#org.dows.log.user.LogUserAutoConfig

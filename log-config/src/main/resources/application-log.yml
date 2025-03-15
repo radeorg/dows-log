@@ -1,0 +1,11 @@
+dows:
+  log:
+    cdc: enable
+    actLogScan: false
+    appLogCollectionNames:
+      hengli:
+        actlog: shdy:hengli:actlog
+        binlog: shdy:hengli:biglog
+      wes:
+        actlog: shdy:wes:actlog
+        binlog: shdy:wes:biglog

@@ -1,0 +1,48 @@
+{
+  "database:table": {
+    "222": {
+      "timestamp()": [
+        {
+          "column": "ddd",
+          "before": "",
+          "after": "",
+          "account": "",
+          "timestamp": ""
+        },
+        {
+          "before": "aaa",
+          "after": "",
+          "account": "",
+          "timestamp": ""
+        },
+        {
+          "before": "ccc",
+          "after": "",
+          "account": "",
+          "timestamp": ""
+        }
+      ]
+    },
+    "timestamp()": [
+      {
+        "column": "ddd",
+        "before": "",
+        "after": "",
+        "account": "",
+        "timestamp": ""
+      },
+      {
+        "before": "aaa",
+        "after": "",
+        "account": "",
+        "timestamp": ""
+      },
+      {
+        "before": "ccc",
+        "after": "",
+        "account": "",
+        "timestamp": ""
+      }
+    ]
+  }
+}

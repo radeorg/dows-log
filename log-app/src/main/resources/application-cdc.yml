@@ -1,0 +1,38 @@
+dows:
+  cdc:
+    jobs:
+      - name: MSSQL_ORDER
+        datasource-name: acre-mssql
+        enable: false
+        descr: 描述
+        dbType: mssql
+        topicPrefix: work-order
+        #        serverId: 1
+        encrypt: false
+        offsetInterval: 3000
+        offset-file: mssql-offset.dat
+        history-file: mssql-history.dat
+        connector-class: io.debezium.connector.sqlserver.SqlServerConnector
+        handle-class: com.shdy.admin.MssqlMessageHandler
+        databases:
+          - acre
+        tables:
+          - dbo.work_order
+      #        properties:
+      #          ddd: ddd
+      - name: MYSQL_LOG
+        datasource-name: acre-mysql
+        enable: true
+        descr: 描述
+        dbType: mysql
+        topicPrefix: mysql-log
+        serverId: 4
+        offsetInterval: 3000
+        offset-file: mysql-offset.dat
+        history-file: mysql-history.dat
+        connector-class: io.debezium.connector.mysql.MySqlConnector
+        handle-class: org.dows.log.handler.LogSinkHandler
+        databases:
+          - wes_all
+        tables:
+          - wes_all.log_column
